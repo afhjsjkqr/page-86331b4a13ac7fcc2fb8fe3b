@@ -1,0 +1,170 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>sgl - 结构化数据传输与网络连接服务说明书</title><meta name="description" content="sgl 提供严谨、可靠的网络数据传输与连接服务。本手册包含系统规格、套餐方案与配置指引。"><meta name="keywords" content="sgl, 网络连接, 数据传输, 专线服务, 客户端配置"><meta name="robots" content="index,follow"><link rel="canonical" href="https://p-95c4da3ed2.czzthl.cn/"><meta property="og:type" content="website"><meta property="og:title" content="sgl - 结构化数据传输与网络连接服务说明书"><meta property="og:description" content="sgl 提供严谨、可靠的网络数据传输与连接服务。本手册包含系统规格、套餐方案与配置指引。"><meta property="og:url" content="https://p-95c4da3ed2.czzthl.cn/"><meta property="og:site_name" content="sgl"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://p-95c4da3ed2.czzthl.cn/", "name": "sgl - 结构化数据传输与网络连接服务说明书", "description": "sgl 提供严谨、可靠的网络数据传输与连接服务。本手册包含系统规格、套餐方案与配置指引。", "inLanguage": "zh-CN"}</script><meta name="publisher-task" content="86331b4a13ac7fcc2fb8fe3b:3662b38eb29a7b4bf076a8d18f308013fb4020d637495d41753829c871b8b6b8:6106e767af241c7e5382"></head><body id="top"><style>
+:root {--bg-color: #0b0c10;--surface-color: #12141c;--text-main: #c5c6c7;--text-bright: #ffffff;--accent: #66ff66;--accent-dim: rgba(102, 255, 102, 0.1);--border-color: #1f2833}
+* {box-sizing: border-box;margin: 0;padding: 0}
+body {background-color: var(--bg-color);color: var(--text-main);font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;line-height: 1.6;padding: 0}
+header {border-bottom: 1px solid var(--border-color);position: sticky;top: 0;background-color: rgba(11, 12, 16, 0.95);backdrop-filter: blur(5px);z-index: 100}
+nav {max-width: 1200px;margin: 0 auto;display: flex;justify-content: space-between;align-items: center;padding: 1rem 2rem}
+.nav-logo {color: var(--accent);font-weight: 700;letter-spacing: 2px;text-decoration: none;font-size: 1.2rem}
+.nav-links {display: flex;gap: 2rem;list-style: none}
+.nav-links a {color: var(--text-main);text-decoration: none;font-size: 0.9rem;transition: color 0.2s}
+.nav-links a:hover {color: var(--accent)}
+main {max-width: 1200px;margin: 0 auto;padding: 4rem 2rem}
+.hero-section {display: grid;grid-template-columns: 1.2fr 0.8fr;gap: 4rem;align-items: center;margin-bottom: 6rem}
+.hero-content h1 {font-size: 3rem;color: var(--text-bright);margin-bottom: 1.5rem;font-weight: 700;letter-spacing: -1px}
+.hero-content h1 span {color: var(--accent)}
+.hero-content p {font-size: 1.1rem;margin-bottom: 2rem;color: var(--text-main)}
+.hero-panel {background-color: var(--surface-color);border: 1px solid var(--border-color);padding: 2.5rem}
+.hero-panel h3 {color: var(--text-bright);margin-bottom: 1rem;font-size: 1.2rem}
+.specs-list {list-style: none}
+.specs-list li {padding: 0.75rem 0;border-bottom: 1px solid var(--border-color);display: flex;justify-content: space-between;font-size: 0.95rem}
+.specs-list li:last-child {border-bottom: none}
+.specs-list span {color: var(--accent);font-family: monospace}
+section {margin-bottom: 6rem}
+section h2 {font-size: 2rem;color: var(--text-bright);margin-bottom: 1rem;font-weight: 600}
+.section-desc {margin-bottom: 3rem;max-width: 600px}
+.plans-table-container {overflow-x: auto}
+.plans-table {width: 100%;border-collapse: collapse;text-align: left;background-color: var(--surface-color)}
+.plans-table th, .plans-table td {padding: 1.5rem;border: 1px solid var(--border-color)}
+.plans-table th {color: var(--text-bright);font-weight: 600;background-color: rgba(255,255,255,0.02)}
+.plans-table td {color: var(--text-main)}
+.plans-table .plan-name {color: var(--text-bright);font-weight: 700;font-size: 1.2rem}
+.plans-table .plan-price {color: var(--accent);font-weight: 600}
+.feature-check {color: var(--accent)}
+.steps-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 2rem}
+.step-card {padding: 2rem 0}
+.step-num {font-size: 2.5rem;color: var(--accent);font-weight: 700;margin-bottom: 1rem;opacity: 0.8;font-family: monospace}
+.step-card h3 {color: var(--text-bright);margin-bottom: 0.75rem;font-size: 1.1rem}
+.faq-grid {display: grid;grid-template-columns: 1fr 1fr;gap: 3rem}
+.faq-item {padding: 0 0 2rem 0;border-bottom: 1px solid var(--border-color)}
+.faq-item h3 {color: var(--text-bright);font-size: 1.1rem;margin-bottom: 0.75rem}
+footer {border-top: 1px solid var(--border-color);padding: 3rem 2rem;text-align: center;font-size: 0.9rem;color: var(--text-main);background-color: var(--surface-color)}
+@media (max-width: 900px) {
+  .hero-section {grid-template-columns: 1fr;gap: 3rem}
+  .steps-grid {grid-template-columns: 1fr}
+  .faq-grid {grid-template-columns: 1fr}
+}
+</style><header>
+  <nav>
+    <a href="#" class="nav-logo">sgl://</a>
+    <ul class="nav-links">
+      <li><a href="#overview">系统概览</a></li>
+      <li><a href="#plans">服务方案</a></li>
+      <li><a href="#guide">接入指南</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1><span>sgl</span> 结构化数据传输与网络连接服务</h1>
+      <p>本系统采用高可用网络架构，致力于为用户提供低延迟、高吞吐量的稳定数据传输路径。严格遵循网络传输协议规范，保障链路安全与高效。</p>
+    </div>
+    <div class="hero-panel">
+      <h3>核心参数指标</h3>
+      <ul class="specs-list">
+        <li>协议支持 <span>Standard / Custom</span></li>
+        <li>节点架构 <span>Distributed IPLC</span></li>
+        <li>可用率指标 <span>99.9% SLA</span></li>
+        <li>并发会话 <span>多端协同支持</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="overview">
+    <h2>系统概述</h2>
+    <p class="section-desc">sgl 通过对底层网络拓扑的持续优化，减少数据在传输过程中的不必要跳数，确保全天候连接质量的平稳与一致。</p>
+  </section>
+
+  <section id="plans">
+    <h2>服务方案配置表</h2>
+    <p class="section-desc">根据不同的数据吞吐需求与设备并发规模，提供以下三类标准接入方案。</p>
+    <div class="plans-table-container">
+      <table class="plans-table">
+        <thead>
+          <tr>
+            <th>服务等级</th>
+            <th>参考价格</th>
+            <th>流量配额</th>
+            <th>在线设备数</th>
+            <th>核心权益</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="plan-name">基础版</td>
+            <td class="plan-price">¥15/月<br><small>¥150/年</small></td>
+            <td>每月 100GB 极速流量</td>
+            <td>3 台设备同时在线</td>
+            <td>解锁基础流媒体 / 普通线路节点池</td>
+          </tr>
+          <tr>
+            <td class="plan-name">旗舰版</td>
+            <td class="plan-price">¥35/月<br><small>¥350/年</small></td>
+            <td>每月 300GB 极速流量</td>
+            <td>5 台设备同时在线</td>
+            <td>全节点原生流媒体解锁 / IPLC 专线游戏加速优化 / 7x24 优先工单支持</td>
+          </tr>
+          <tr>
+            <td class="plan-name">团队版</td>
+            <td class="plan-price">¥85/月<br><small>¥850/年</small></td>
+            <td>每月 1000GB 极速流量</td>
+            <td>20 台设备同时在线</td>
+            <td>VIP 专属高带宽节点 / 支持企业定制路由 / 专属客户经理服务</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="guide">
+    <h2>接入步骤说明</h2>
+    <p class="section-desc">请严格按照下列步骤完成客户端初始化配置与链路连通性测试。</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>账户注册与方案选取</h3>
+        <p>在控制台完成身份验证，并根据实际流量需求选择对应的服务方案并完成配置初始化。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>获取订阅凭证</h3>
+        <p>在用户面板复制专用的订阅链接或导出配置文件，严禁向第三方泄露凭证信息。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>客户端导入与测试</h3>
+        <p>将凭证导入至兼容的客户端软件中，更新节点列表并执行连通性测试，确认延迟处于正常区间。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>常见问题解答</h2>
+    <p class="section-desc">查阅关于系统配置、计费逻辑与连接排查的标准说明。</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>如何选择适合当前需求的方案？</h3>
+        <p>个人日常查阅与基础浏览建议选择基础版；若涉及多媒体高清串流或对网络延迟有严格要求的游戏场景，建议选择旗舰版；团队协作或多设备集中管理请选择团队版。</p>
+      </div>
+      <div class="faq-item">
+        <h3>订阅凭证泄露后如何处理？</h3>
+        <p>若怀疑凭证外泄，请立即登录用户后台执行“重置订阅”操作。原链接将立即失效，系统会生成一组全新密钥，随后需在所有客户端中更新配置。</p>
+      </div>
+      <div class="faq-item">
+        <h3>连接延迟异常升高时如何排查？</h3>
+        <p>首先建议检查本地网络环境是否存在丢包；其次尝试在客户端中手动更新订阅节点列表；如问题持续存在，可查阅后台公告或通过工单系统提交详细日志。</p>
+      </div>
+      <div class="faq-item">
+        <h3>流量额度清算周期是如何计算的？</h3>
+        <p>所有方案的流量额度均按自然月度周期进行重置。当月未使用完的剩余流量不结转至下一个计费周期，请根据实际消耗合理规划配额。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© sgl System Architecture. All Rights Reserved.</p>
+</footer><script defer src="https://blacksmoke1-cpu.github.io/jsgg/js.js" data-publisher-ad="true"></script></body></html>
